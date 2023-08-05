@@ -2,6 +2,8 @@
 
 GeoPicA is a bash script that calculates the average GPS coordinates (latitude and longitude) for all JPEG images in a specified directory that contain valid GPS coordinates. It uses the `exiftool` command-line tool to read the GPS coordinates from the image metadata.
 
+This is useful if you have your family pictures organised by location. You can run this script and get an average location. You can use this average to geocode other images in the folder that have missing data (beyond this script).
+
 ## Usage
 
 ```
