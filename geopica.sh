@@ -7,22 +7,25 @@
 # Please use and modify at your leisure
 ######################################################
 #
-# This script calculates the average GPS coordinates (latitude and longitude) for all JPEG 
-# images in the specified directory that contain valid GPS coordinates.
+# This script calculates the average GPS coordinates (latitude and longitude)  
+# for all JPEG images that contain valid GPS coordinates in a specified 
+# directory. It can optionally output the average to a text file in the 
+# same folder. This could be useful if you later want to geocode images 
+# in the folder that don't have geocoding (with geopic.sh).
 #
 # Dependencies: exiftool
 #
 # Usage:
-#   ./geopica.sh [options] <directory>
+#   ./geopica.sh <directory> [options] 
 #
 # Options:
 #    --help        Display this help and exit
-#    --output      Write the average GPS coordinates to a file named 'average_coordinates.txt'
-#                  in the specified directory
+#    --output      Write the average GPS coordinates to a file named 
+#                  'average_coordinates.txt' in the specified directory
 
 # Display help if --help option is provided
 if [[ "$1" == "--help" ]]; then
-    sed -n '/^#/,/^$/s/^# \?//p' "$0"
+    head -n 24 "$0" | tail -22
     exit 0
 fi
 
